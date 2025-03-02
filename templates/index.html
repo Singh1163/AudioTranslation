@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Translation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Audio Translation Service</h1>
+
+        <div class="recording-section">
+            <h2>Record Audio</h2>
+            <div class="recording-controls">
+                <button class="record-btn" id="recordButton">Start Recording</button>
+                <div class="recording-status" id="recordingStatus"></div>
+            </div>
+        </div>
+
+        <form id="translationForm">
+            <div class="form-group">
+                <label>Upload Audio File:</label>
+                <input type="file" name="file" accept="audio/*" id="fileInput">
+            </div>
+            <div class="form-group">
+                <input type="text" name="language" placeholder="Target language (e.g., English, Spanish)" required>
+            </div>
+            <input type="submit" value="Translate">
+        </form>
+
+        <div class="result-section">
+            <div class="loader" id="loader"></div>
+            <h2>Translation Result:</h2>
+            <div class="translation-result" id="translationResult"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
